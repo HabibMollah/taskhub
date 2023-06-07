@@ -13,6 +13,9 @@ const Form = () => {
         Due Date
       </label>
       <input className="input input-bordered" type="date" id="due-date" />
+      <button className="btn btn-outline my-8" type="submit">
+        Add Task
+      </button>
     </form>
   );
 };
