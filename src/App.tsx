@@ -1,10 +1,13 @@
-import Form from './components/Form';
+import { Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
+import HomePage from './components/HomePage';
 
 function App() {
   return (
     <>
-      <Form />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+      </Routes>
       <NavBar />
     </>
   );
