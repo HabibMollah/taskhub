@@ -7,6 +7,7 @@ import TasksPage from './components/TasksPage';
 function App() {
   return (
     <>
+      <h1 className="text-5xl font-bold text-center">TaskHub</h1>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="notifications" element={<NotificationsPage />} />
