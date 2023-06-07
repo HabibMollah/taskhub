@@ -3,6 +3,7 @@ import NavBar from "./components/NavBar";
 import HomePage from "./components/HomePage";
 import NotificationsPage from "./components/NotificationsPage";
 import TasksPage from "./components/TasksPage";
+import Auth from "./components/Auth";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="notifications" element={<NotificationsPage />} />
         <Route path="tasks" element={<TasksPage />} />
       </Routes>
+      <Auth />
       <NavBar />
     </>
   );
