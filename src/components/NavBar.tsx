@@ -1,5 +1,5 @@
-import { FaBell, FaHome, FaTasks } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { FaBell, FaHome, FaTasks } from "react-icons/fa";
+import { Link } from "react-router-dom";
 const NavBar = () => {
   return (
     <div className="btm-nav">

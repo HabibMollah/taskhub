@@ -1,7 +1,7 @@
 const TasksPage = () => {
   return (
     <>
-      <h2 className="text-2xl font-bold text-center mt-6">Tasks</h2>
+      <h2 className="mt-6 text-center text-2xl font-bold">Tasks</h2>
     </>
   );
 };

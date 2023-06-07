@@ -1,7 +1,7 @@
 const NotificationsPage = () => {
   return (
     <>
-      <h2 className="text-2xl font-bold text-center mt-6">Notifications</h2>
+      <h2 className="mt-6 text-center text-2xl font-bold">Notifications</h2>
     </>
   );
 };
