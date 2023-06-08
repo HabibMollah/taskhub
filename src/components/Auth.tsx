@@ -1,13 +1,36 @@
 import { auth, googleProvider } from "../firebase";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  signInWithPopup,
+  signOut,
+} from "firebase/auth";
 import { useForm, SubmitHandler, FieldValues } from "react-hook-form";
 import { FcGoogle } from "react-icons/fc";
 const Auth = () => {
-  const { register, handleSubmit, reset } = useForm();
+  const { register, handleSubmit } = useForm();
 
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
-    await createUserWithEmailAndPassword(auth, data.email, data.password);
-    reset();
+    try {
+      await createUserWithEmailAndPassword(auth, data.email, data.password);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const handleGoogleSignIn = async () => {
+    try {
+      await signInWithPopup(auth, googleProvider);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const handleSignOut = async () => {
+    try {
+      await signOut(auth);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
@@ -42,10 +65,16 @@ const Auth = () => {
       </button>
       <button
         className="btn-outline btn mt-4 block flex items-center justify-center gap-2"
-        // onClick={}
+        onClick={handleGoogleSignIn}
       >
         <FcGoogle size={24} />
         Sign in with Google
+      </button>
+      <button
+        className="btn-outline btn-error btn mt-4"
+        onClick={handleSignOut}
+      >
+        Sign out
       </button>
     </form>
   );
